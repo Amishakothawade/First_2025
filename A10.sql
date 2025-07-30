@@ -1,0 +1,44 @@
+CREATE TABLE jobs (job_id INT PRIMARY KEY,job_name VARCHAR(50) NOT NULL);
+
+CREATE TABLE Location (location_id INT PRIMARY KEY,location_name VARCHAR(50) NOT NULL);
+
+
+CREATE TABLE PII (id INT PRIMARY KEY,name VARCHAR(50) NOT NULL,
+ dob DATE NOT NULL,job_id INT NOT NULL,adhaar VARCHAR(12) UNIQUE,contact_no VARCHAR(15) NOT NULL,gender CHAR(1) NOT NULL, CONSTRAINT fk_jobs FOREIGN KEY (job_id) REFERENCES Jobs(job_id));
+
+DROP TABLE PII;
+select  * from PII;
+
+Alter TABLE PII ADD COLUMN location_id INT NOT NULL;
+
+INSERT INTO jobs VALUES ( 10,'engineer');
+ INSERT INTO jobs VALUES ( 20,'shopkeeper');
+ INSERT INTO jobs VALUES ( 30,'doctor');
+ INSERT INTO jobs VALUES ( 40,'clerk');
+ INSERT INTO jobs VALUES ( 50,'Teacher');
+ 
+ INSERT INTO location VALUES ( 1,'pune');
+ INSERT INTO location VALUES ( 2,'Nagar');
+ INSERT INTO location VALUES ( 3,'nashik');
+ INSERT INTO location VALUES ( 4,'mumbai');
+ INSERT INTO location VALUES ( 5,'Goa');
+ 
+INSERT INTO pII VALUES(101,'amisha', '1985-07-15', 10, '123456789012', '555-555-5000', 'F', 1);
+ INSERT INTO pII VALUES(102,'Tejas', '1985-07-15', 20, '908956789012', '678-555-5589', 'M', 2);
+ INSERT INTO pII VALUES(103,'soham', '1985-07-15', 30, '783456789012', '666-598-5555', 'M', 3);
+ INSERT INTO pII VALUES(104,'siddhesh', '1985-07-15', 40, '567456789012', '895-590-5345', 'M', 4);
+ INSERT INTO pII VALUES(105,'arya', '1985-07-15', 50, '456456789012', '585-855-9995', 'F', 5);
+ 
+ select * from jobs;
+ select * from location;
+ select * from PII;
+ 
+  INSERT INTO pII VALUES(106,'priti', '1995-07-25', 50, '456478789012', '585-855-9995', 'F', 5);
+ INSERT INTO pII VALUES(107,'asma', '1985-07-15', 40, '996456789012', '585-855-9995', 'F', 5);
+ INSERT INTO pII VALUES(108,'riya', '2005-07-15', 50, '456457689012', '585-855-9995', 'F', 7);
+ INSERT INTO pII VALUES(109,'pooja', '2005-07-15', 50, '676457689012', '585-855-9995', 'F', 9);
+ INSERT INTO pII VALUES(110,'siya', '2005-07-15', 90, '456457678712', '585-855-9995', 'F', 7);
+
+select * from PII;
+ 
+	
